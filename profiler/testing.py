@@ -13,16 +13,16 @@ def test_bubble_sort_descending():
     assert(bubble_sort.sort(test_input, sort_order='descending')) == [5, 4, 3 ,2, 1]
 
 
-# def test_selection_sort_ascending():
-#     test_input = [5, 4, 3 ,2, 1]
-#     selection_sort = SelectionSort()
-#     assert(selection_sort.sort()) == [1, 2, 3, 4, 5]
+def test_selection_sort_ascending():
+    test_input = [5, 4, 3 ,2, 1]
+    selection_sort = SelectionSort()
+    assert(selection_sort.sort(test_input)) == [1, 2, 3, 4, 5]
 
 
-# def test_selection_sort_descending():
-#     test_input = [1, 2, 3, 4, 5]
-#     selection_sort = SelectionSort()
-#     assert(selection_sort.sort(sort_order='descending')) == [5, 4, 3 ,2, 1]
+def test_selection_sort_descending():
+    test_input = [1, 2, 3, 4, 5]
+    selection_sort = SelectionSort()
+    assert(selection_sort.sort(test_input, sort_order='descending')) == [5, 4, 3 ,2, 1]
 
 # def test_insertion_sort_ascending():
 #     test_input = [5, 4, 3 ,2, 1]
