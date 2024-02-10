@@ -36,16 +36,16 @@ def test_insertion_sort_descending():
     assert(insertion_sort.sort(test_input, sort_order='descending')) == [5, 4, 3 ,2, 1]
 
 
-# def test_merge_sort_ascending():
-#     test_input = [5, 4, 3 ,2, 1]
-#     merge_sort = MergeSort()
-#     assert(merge_sort.sort()) == [1, 2, 3, 4, 5]
+def test_merge_sort_ascending():
+    test_input = [5, 4, 3 ,2, 1]
+    merge_sort = MergeSort(test_input)
+    assert(merge_sort.sort()) == [1, 2, 3, 4, 5]
 
 
 # def test_merge_sort_descending():
 #     test_input = [1, 2, 3, 4, 5]
 #     merge_sort = MergeSort()
-#     assert(merge_sort.sort(sort_order='descending')) == [5, 4, 3 ,2, 1]
+#     assert(merge_sort.sort(test_input, sort_order='descending')) == [5, 4, 3 ,2, 1]
 
 
 # def test_quick_sort_ascending():
