@@ -4,8 +4,10 @@ from food import Food
 from scoreboard import Scoreboard
 import time
 
+WIDTH = 600
+HEIGHT = 600
 screen = Screen()
-screen.setup(width=600, height=600)
+screen.setup(width=WIDTH, height=HEIGHT)
 screen.bgcolor("black")
 screen.title("My Snake Game")
 screen.tracer(0)
@@ -31,7 +33,8 @@ while game_is_on:
         snake.extend()
         scoreboard.increase_score()
 
-    if snake.head.xcor() > 200 or snake.head.xcor() < -200 or snake.head.ycor() > 200 or snake.head.ycor() < -200:
+    if snake.head.xcor() > WIDTH * 0.5 or snake.head.xcor() < -WIDTH * 0.5 or snake.head.ycor() > HEIGHT * 0.55 or snake.head.ycor() < -HEIGHT * 0.5:
+        scoreboard.game_over()
         game_is_on = False
 
 screen.exitonclick()
