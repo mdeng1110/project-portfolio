@@ -1,5 +1,5 @@
 import turtle as turtle_module
-import random
+import secrets
 
 turtle_module.colormode(255)
 tim = turtle_module.Turtle()
@@ -13,7 +13,7 @@ tim.setheading(0)
 number_of_dots = 100
 
 for dot_count in range(1, number_of_dots + 1):
-    tim.dot(20, random.choice(color_list))
+    tim.dot(20, secrets.SystemRandom().choice(color_list))
     tim.forward(50)
 
     if dot_count % 10 == 0:

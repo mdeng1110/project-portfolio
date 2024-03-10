@@ -1,5 +1,5 @@
 import argparse
-import random
+import secrets
 
 
 def parse_arguments():
@@ -51,7 +51,7 @@ def main():
         print('n NEEDS TO BE GREATER THAN 0')
         exit(1)
     
-    array = [random.randint(-999999,999999) for i in range(args.n)]
+    array = [secrets.SystemRandom().randint(-999999,999999) for i in range(args.n)]
     print('list: ', array)
     if args.min:
         print('minimum: ', min_num(array))
