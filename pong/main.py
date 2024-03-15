@@ -35,6 +35,7 @@ while game_is_on:
 
     if ball.xcor() > 380:
         ball.reset_position()
+        scoreboard.l_point()
 
     if ball.xcor() < -380:
         ball.reset_position()
