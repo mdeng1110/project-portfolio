@@ -9,7 +9,7 @@ MOVE_INCREMENT = 10
 class CarManager:
     
     def __init__(self):
-        all_cars = []
+        self.all_cars = []
 
     def create_cars(self):
         random_chance = random.randint(1, 6)
