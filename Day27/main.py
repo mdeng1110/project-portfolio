@@ -8,9 +8,12 @@ window.minsize(width=500, height=300)
 my_label = tkinter.Label(text="I am a Label", font=("Arial", "24"))
 my_label.pack(side="left")
 
-import turtle
+my_label["text"] = "New Text"
+my_label.config(text="New Text")
 
-tim = turtle.Turtle()
-tim.write("Some text")
+# import turtle
 
-window.mainloop()
+# tim = turtle.Turtle()
+# tim.write("Some text")
+
+# window.mainloop()
