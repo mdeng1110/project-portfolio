@@ -15,11 +15,27 @@ LONG_BREAK_MIN = 20
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
+# import Time
+
+# count = 5
+# while True:
+#     time.sleep(1)
+#     count -= 1
+
+def count_down(count):
+    print(count)
+    if count > 0:
+        window.after(1000, count_down, count - 1)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg=YELLOW)
+
+def say_something(thing):
+    print(thing)
+
+window.after(1000, say_something, "Hello")
 
 title_label = Label(text="Timer", bg=YELLOW, fg=GREEN, font=(FONT_NAME, 50))
 title_label.grid(column=1, row=0)
