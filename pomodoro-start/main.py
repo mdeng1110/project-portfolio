@@ -26,8 +26,13 @@ def start_timer():
     count_down(work_sec)
     if reps % 8 == 0:
         count_down(long_break_sec)
-
-    count_down(short_break_sec)
+        title_label.config(text="Break", fg=RED)
+    elif reps % 2 == 0:
+        count_down(short_break_sec)
+        title_label.config(text="Break", fg=PINK)
+    else:
+        count_down(work_sec)
+        title_label.config(text="Break", fg=GREEN)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 import math
