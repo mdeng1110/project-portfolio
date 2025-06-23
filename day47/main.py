@@ -5,13 +5,14 @@ from bs4 import BeautifulSoup
 url = "https://appbrewery.github.io/instant_pot/"
 response = requests.get(url)
 
-#check if the request was successful
-if response.status_code == 200:
-    page_content = response.text
-    soup = BeautifulSoup(page_content, "html.parser")
-    #check how to find the price
-    price_element = soup.find("span",class_="a_price")
-else:
-    print(f"Failed to fetch content form {url}")
-    exit()
+soup = BeautifulSoup(response.content, "html.parser")
 
+# Find the HTML element that contain the price
+price = soup.find(class_="a-offscreen").get_text()
+
+# Remove dollar sign using split
+price_without_currency = price.split("$")[1]
+
+# Convert to floating point number
+price_as_float = float(price_without_currency)
+print(price_as_float)
