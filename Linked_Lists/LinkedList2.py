@@ -9,7 +9,7 @@ class linked_list:
     
     def append(self, data):
         new_node = node(data)
-        if not self.head:
+        if self.empty():
             self.head = node(data)
             return
          
@@ -26,6 +26,9 @@ class linked_list:
             total += 1
             cur = cur.next
         return total
+    
+    def empty(self):
+        return self.length() == 0
     
     def display(self):
         cur_node = self.head
