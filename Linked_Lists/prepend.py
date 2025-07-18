@@ -6,6 +6,7 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.tail = None
         self.length = 0
 
     def empty(self):
@@ -16,12 +17,23 @@ class LinkedList:
         new_node = Node(data)
         if self.empty():
             self.head = new_node
+            self.tail = new_node
             self.length += 1
             return 
         new_node.next = self.head
         self.head = new_node
+        # self.tail = self.head.next
         self.length += 1
 
+    def append(self, data):
+        new_node = Node(data)
+        if self.empty():
+            self.head = new_node
+            self.length += 1
+            return
+
+        self.tail.next = new_node
+        self.length += 1
 
     def display(self):
         current = self.head
@@ -34,5 +46,5 @@ my_list = LinkedList()
 my_list.prepend(30)
 my_list.prepend(20)
 my_list.prepend(10)
-
+my_list.append(40)
 my_list.display()
