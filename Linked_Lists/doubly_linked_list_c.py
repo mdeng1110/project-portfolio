@@ -66,15 +66,33 @@ class DoublyLinkedList:
             temp = self.tail
             for _ in range(self.length-1, index, -1):
                 temp = temp.prev
-        return temp.value
+        return temp
+    
+    def set_value(self, index, value):
+        temp = self.get(index)
 
-my_doubly_linked_list = DoublyLinkedList(0)
-my_doubly_linked_list.append(1)
-my_doubly_linked_list.append(2)
-my_doubly_linked_list.append(3)
+        if temp:
+            temp.value = value
+            return True
+        return False
+
+
+# my_doubly_linked_list = DoublyLinkedList(0)
+# my_doubly_linked_list.append(1)
+# my_doubly_linked_list.append(2)
+# my_doubly_linked_list.append(3)
 # my_doubly_linked_list.prepend(1)
 # print(my_doubly_linked_list.pop())
 
 # my_doubly_linked_list.print_list()
-print(my_doubly_linked_list.get(1))
-print(my_doubly_linked_list.get(2))
+# print(my_doubly_linked_list.get(1))
+# print(my_doubly_linked_list.get(2))
+
+my_doubly_linked_list = DoublyLinkedList(11)
+my_doubly_linked_list.append(3)
+my_doubly_linked_list.append(23)
+my_doubly_linked_list.append(7)
+
+my_doubly_linked_list.set_value(1,4)
+
+my_doubly_linked_list.print_list()
