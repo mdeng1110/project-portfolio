@@ -11,6 +11,17 @@ def count_divisible_triplets(arr, d):
     
     for pos in range(n-1, -1, -1):
         row = suffix_counts[pos+1]
+        new_row = row.copy()
+        new_row[arr_mod[pos]] += 1
+        suffix_counts[pos] = new_row
+
+    total = 0
+    #iterate all i <= j pairs
+    for i in range(n):
+        for j in range(i, n):
+            need = (-(arr_mod[i] + arr_mod[j])) % d
+            total += suffix_counts[j][need]
+    return total
 
 
 
