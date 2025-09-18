@@ -8,14 +8,14 @@ class DoublyLinkedList:
     def __init__(self, value):
         new_node = Node(value)
         self.head = new_node
-        self.tail = new_node
+        self.tail = self.head
         self.length = 1
 
     def append(self, value):
         new_node = Node(value)
         if self.head is None:
             self.head = new_node
-            self.tail = new_node
+            self.tail = self.head
         else:
             self.tail.next = new_node
             new_node.prev = self.tail
@@ -51,9 +51,11 @@ class DoublyLinkedList:
 
     def print_list(self):
         temp = self.head
+        print(temp.value)
         while temp is not None:
-            print(temp.value)
+            # print(temp.value)
             temp = temp.next
+
 
     def get(self, index):
         if index < 0 and index >= self.length:
@@ -95,6 +97,21 @@ class DoublyLinkedList:
 
         self.length += 1
         return True
+    
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        temp = self.get(index)
+        temp.next.prev = temp.prev
+        temp.prev.next = temp.prev
+        temp.next = None
+        temp.prev = None
+        self.length -= 1
+        return temp.value
 
 
 # my_doubly_linked_list = DoublyLinkedList(0)
@@ -117,9 +134,15 @@ class DoublyLinkedList:
 
 # my_doubly_linked_list.print_list()
 
-my_doubly_linked_list = DoublyLinkedList(1)
-my_doubly_linked_list.append(3)
+# my_doubly_linked_list = DoublyLinkedList(1)
+# my_doubly_linked_list.append(3)
 
-my_doubly_linked_list.insert(1,2)
+# my_doubly_linked_list.insert(1,2)
 
+# my_doubly_linked_list.print_list()
+
+my_doubly_linked_list = DoublyLinkedList(0)
+my_doubly_linked_list.append(1)
+my_doubly_linked_list.append(2)
+my_doubly_linked_list.remove(1)
 my_doubly_linked_list.print_list()
