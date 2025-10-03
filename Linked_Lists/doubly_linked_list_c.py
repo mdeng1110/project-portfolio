@@ -48,14 +48,12 @@ class DoublyLinkedList:
             self.head = new_node
         self.length += 1
         return True
-
+    
     def print_list(self):
         temp = self.head
-        print(temp.value)
         while temp is not None:
-            # print(temp.value)
+            print(temp.value)
             temp = temp.next
-
 
     def get(self, index):
         if index < 0 and index >= self.length:
