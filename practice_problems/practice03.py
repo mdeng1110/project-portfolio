@@ -58,6 +58,13 @@ def simulate_print_queue():
 if __name__ == "__main__":
     simulate_print_queue()
 
+def factorial(n):
+    print("factorial called with n=", str(n))
+    if n > 1:
+        return n*factorial(n-1)
+    print("Ending condition met.")
+    return 1
+
 
 reversed_string = reverse_str(hello)
 print("Original String:", hello)
@@ -67,3 +74,4 @@ balance_parens = check_balanced_parens(paren_input)
 print("Balanced Parentheses?:", balance_parens)
 print("Queue Simulation:")
 simulate_print_queue() 
+print(factorial(5))
