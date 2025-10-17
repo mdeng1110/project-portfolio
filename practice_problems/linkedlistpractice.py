@@ -10,7 +10,6 @@ class LinkedList:
         self.head = None
 
     def append(self, data):
-        """Add a new node at the end"""
         new_node = Node(data)
         if not self.head:
             self.head = new_node
@@ -47,6 +46,15 @@ class LinkedList:
             current = current.next
         print("None")
 
+    def search(self, value):
+        """Return True if the value is found, else False."""
+        current = self.head
+        while current:
+            if current.data == value:
+                return True
+            current = current.next
+        return False
+
 if __name__ == "__main__":
     ll = LinkedList()
 
@@ -58,12 +66,15 @@ if __name__ == "__main__":
     ll.display()
 
     # Prepend element
-    ll.prepend(5)
-    print("\nAfter prepending:")
-    ll.display()
+    # ll.prepend(5)
+    # print("\nAfter prepending:")
+    # ll.display()
 
     # Delete element
-    ll.delete(20)
-    print("\nAfter deleting 20:")
-    ll.display()
+    # ll.delete(20)
+    # print("\nAfter deleting 20:")
+    # ll.display()
+
+    print("\nSearch for 20:", ll.search(20))  # True
+    print("Search for 50:", ll.search(50))    # False
 
