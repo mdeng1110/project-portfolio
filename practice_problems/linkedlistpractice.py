@@ -46,3 +46,24 @@ class LinkedList:
             print(current.data, end=" → ")
             current = current.next
         print("None")
+
+if __name__ == "__main__":
+    ll = LinkedList()
+
+    # Append elements
+    ll.append(10)
+    ll.append(20)
+    ll.append(30)
+    print("After appending:")
+    ll.display()
+
+    # Prepend element
+    ll.prepend(5)
+    print("\nAfter prepending:")
+    ll.display()
+
+    # Delete element
+    ll.delete(20)
+    print("\nAfter deleting 20:")
+    ll.display()
+
