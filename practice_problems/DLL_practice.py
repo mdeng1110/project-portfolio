@@ -83,6 +83,7 @@ if __name__ == "__main__":
     dll.append(10)
     dll.append(20)
     dll.append(30)
+    dll.append(40)
     print("Forward traversal after append:")
     dll.display_forward()
     
@@ -97,4 +98,16 @@ if __name__ == "__main__":
     print("\nSearch:")
     DLL_node = dll.search(30)
     print(DLL_node.data)
+
+    print("\nDeleting 10 (head):")
+    dll.delete(10)
+    dll.display_forward()
+
+    print("\nDeleting 30 (middle):")
+    dll.delete(30)
+    dll.display_forward()
+
+    print("\nDeleting 40 (tail):")
+    dll.delete(40)
+    dll.display_forward()
 
