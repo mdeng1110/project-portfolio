@@ -49,6 +49,33 @@ class DoublyLinkedList:
             current = current.next
         return None  
 
+    def delete(self, value):
+        current = self.head
+
+        while current:
+            if current.data == value:
+                # Case 1: Node is the head
+                if current == self.head:
+                    self.head = current.next
+                    if self.head:
+                        self.head.prev = None
+
+                # Case 2: Node is the tail
+                elif current == self.tail:
+                    self.tail = current.prev
+                    self.tail.next = None
+
+                # Case 3: Node is in the middle
+                else:
+                    current.prev.next = current.next
+                    current.next.prev = current.prev
+
+                return True  # Deletion successful
+            current = current.next
+
+        return False  # Value not found
+
+
 if __name__ == "__main__":
     dll = DoublyLinkedList()
     
@@ -70,5 +97,4 @@ if __name__ == "__main__":
     print("\nSearch:")
     DLL_node = dll.search(30)
     print(DLL_node.data)
-
 
