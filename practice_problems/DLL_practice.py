@@ -74,40 +74,72 @@ class DoublyLinkedList:
             current = current.next
 
         return False  # Value not found
+    
+    def reverse(self):
+        current = self.head
+        prev_node = None
+
+        while current:
+            # Swap next and prev pointers
+            current.prev, current.next = current.next, current.prev
+            
+            # Move prev_node to current before shifting
+            prev_node = current
+
+            # Move to the next node in the *original* direction
+            current = current.prev
+
+        # After loop, prev_node will be the new head
+        if prev_node:
+            self.head = prev_node
+
 
 
 if __name__ == "__main__":
     dll = DoublyLinkedList()
     
     # Append nodes
-    dll.append(10)
-    dll.append(20)
-    dll.append(30)
-    dll.append(40)
-    print("Forward traversal after append:")
-    dll.display_forward()
+    # dll.append(10)
+    # dll.append(20)
+    # dll.append(30)
+    # dll.append(40)
+    # print("Forward traversal after append:")
+    # dll.display_forward()
     
-    # Prepend node
-    dll.prepend(5)
-    print("\nForward traversal after prepend:")
-    dll.display_forward()
+    # # Prepend node
+    # dll.prepend(5)
+    # print("\nForward traversal after prepend:")
+    # dll.display_forward()
     
-    print("\nBackward traversal:")
-    dll.display_backward()
+    # print("\nBackward traversal:")
+    # dll.display_backward()
     
-    print("\nSearch:")
-    DLL_node = dll.search(30)
-    print(DLL_node.data)
+    # print("\nSearch:")
+    # DLL_node = dll.search(30)
+    # print(DLL_node.data)
 
-    print("\nDeleting 10 (head):")
-    dll.delete(10)
-    dll.display_forward()
+    # print("\nDeleting 10 (head):")
+    # dll.delete(10)
+    # dll.display_forward()
 
-    print("\nDeleting 30 (middle):")
-    dll.delete(30)
-    dll.display_forward()
+    # print("\nDeleting 30 (middle):")
+    # dll.delete(30)
+    # dll.display_forward()
 
-    print("\nDeleting 40 (tail):")
-    dll.delete(40)
-    dll.display_forward()
+    # print("\nDeleting 40 (tail):")
+    # dll.delete(40)
+    # dll.display_forward()
 
+dll = DoublyLinkedList()
+dll.append(10)
+dll.append(20)
+dll.append(30)
+dll.append(40)
+
+print("Original:")
+dll.display_forward()
+
+dll.reverse()
+
+print("\nReversed:")
+dll.display_forward()
