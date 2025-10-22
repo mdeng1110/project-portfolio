@@ -93,10 +93,42 @@ class DoublyLinkedList:
         if prev_node:
             self.head = prev_node
 
+    def partition_list(self, x):
+        if not self.head:
+            return None
+        dummy1 = Node(0)
+        dummy2 = Node(0)
+        prev1 = dummy1
+        prev2 = dummy2
+        current = self.head
+        
+        while current:
+            if current.data < x:
+                prev1.next = current
+                current.prev = prev1
+                prev1 = current
+            else:
+                prev2.next = current
+                current.prev = prev2
+                prev2 = current
+            current = current.next
+            
+            prev1.next = dummy2.next
+            if dummy2.next:
+                dummy2.next.prev = prev1
+            
+            prev2.next = None
+            
+            self.head = dummy1.next
+            self.head.prev = None
 
+    def make_empty(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
 
-if __name__ == "__main__":
-    dll = DoublyLinkedList()
+# if __name__ == "__main__":
+    # dll = DoublyLinkedList()
     
     # Append nodes
     # dll.append(10)
@@ -130,16 +162,72 @@ if __name__ == "__main__":
     # dll.delete(40)
     # dll.display_forward()
 
-dll = DoublyLinkedList()
-dll.append(10)
-dll.append(20)
-dll.append(30)
-dll.append(40)
+# dll = DoublyLinkedList()
+# dll.append(10)
+# dll.append(20)
+# dll.append(30)
+# dll.append(40)
 
-print("Original:")
-dll.display_forward()
+# print("Original:")
+# dll.display_forward()
 
-dll.reverse()
+# dll.reverse()
 
-print("\nReversed:")
-dll.display_forward()
+# print("\nReversed:")
+# dll.display_forward()
+
+
+    
+# -------------------------------
+# Test Cases:
+# -------------------------------
+
+print("\nTest Case 1: Partition around 5")
+dll1 = DoublyLinkedList()
+dll1.append(8)
+dll1.append(5)
+dll1.append(10)
+dll1.append(2)
+dll1.append(1)
+print("BEFORE: ", end="")
+dll1.display_forward()
+dll1.partition_list(5)
+print("AFTER:  ", end="")
+dll1.display_forward()
+
+print("\nTest Case 2: All nodes less than x")
+dll2 = DoublyLinkedList()
+dll2.append(2)
+dll2.append(3)
+print("BEFORE: ", end="")
+dll2.display_forward()
+dll2.partition_list(5)
+print("AFTER:  ", end="")
+dll2.display_forward()
+
+print("\nTest Case 3: All nodes greater than x")
+dll3 = DoublyLinkedList()
+dll3.append(7)
+dll3.append(8)
+print("BEFORE: ", end="")
+dll3.display_forward()
+dll3.partition_list(5)
+print("AFTER:  ", end="")
+dll3.display_forward()
+
+print("\nTest Case 4: Empty list")
+dll4 = DoublyLinkedList()
+dll4.make_empty()
+print("BEFORE: ", end="")
+dll4.display_forward()
+dll4.partition_list(5)
+print("AFTER:  ", end="")
+dll4.display_forward()
+
+print("\nTest Case 5: Single node")
+dll5 = DoublyLinkedList()
+print("BEFORE: ", end="")
+dll5.display_forward()
+dll5.partition_list(5)
+print("AFTER:  ", end="")
+dll5.display_forward()
