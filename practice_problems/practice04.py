@@ -27,7 +27,16 @@ def count_char(word, char):
             return 1 + count_char(word[1:], char)
         else:
             return count_char(word[1:], char)
-    
+
+def print_pattern(n):
+    # base case
+    if n <= 0:
+        return 
+    print(n, end=" ")
+    print_pattern(n-1)
+    if n > 1:
+        print(n, end=" ")
+
 
 # testing
 print("factorial result: ", factorial(5))
@@ -42,3 +51,7 @@ print("fibonacci result:", result)
 word = "recursion"
 result2 = count_char(word, "r")
 print("Count Char result:", result2)
+
+num = 3
+print("Print pattern result:", end=' ')
+print_pattern(num)
