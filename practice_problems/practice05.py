@@ -189,6 +189,12 @@ def frequency_counter(words):
             counter[word] += 1
     return counter
 
+def frequency_counter2(words):
+    counter = {}
+    for word in words:
+        counter[word] = counter.get(word, 0) + 1
+    return counter
+
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
 
@@ -209,3 +215,4 @@ print("Original Parentheses:", paren_input)
 print("Result of isValid method:", isValid(paren_input))
 print("Original words:", words)
 print("Dictionary of words:", frequency_counter(words))
+print("Another Dictionary of words using the get method:", frequency_counter2(words))
