@@ -157,6 +157,27 @@ def sliding_window_max(nums, k):
 
     return result
 
+def isValid(str):
+    close_to_open = {
+        ")":"()",
+        "}":"{",
+        "]":"[]"
+    }
+    stack = []
+    for bracket in str:
+        if bracket in close_to_open:
+            if not stack:
+                return False
+            top = stack.pop()
+            if close_to_open[bracket] != top:
+                return False
+        else:
+            stack.append(bracket)
+    if stack:
+        return False
+    else:
+        return True
+
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
 
@@ -173,3 +194,5 @@ k = 3
 output = sliding_window_max(arr, k)
 print("Result of Sliding Window Maximum:", output) 
 # Expected output: [3, 3, 5, 5, 6, 7]
+print("Original Parentheses:", paren_input)
+print("Result of isValid method:", isValid(paren_input))
