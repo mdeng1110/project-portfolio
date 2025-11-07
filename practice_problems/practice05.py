@@ -178,6 +178,17 @@ def isValid(str):
     else:
         return True
 
+words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+#Expected output: {'apple': 3, 'banana': 2, 'orange': 1}
+def frequency_counter(words):
+    counter = {}
+    for word in words:
+        if word not in counter:
+            counter[word] = 1
+        else:
+            counter[word] += 1
+    return counter
+
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
 
@@ -196,3 +207,5 @@ print("Result of Sliding Window Maximum:", output)
 # Expected output: [3, 3, 5, 5, 6, 7]
 print("Original Parentheses:", paren_input)
 print("Result of isValid method:", isValid(paren_input))
+print("Original words:", words)
+print("Dictionary of words:", frequency_counter(words))
