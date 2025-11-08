@@ -195,6 +195,15 @@ def frequency_counter2(words):
         counter[word] = counter.get(word, 0) + 1
     return counter
 
+def remove_duplicates(nums):
+    result = []
+    for num in nums:
+        if num not in result:
+            result.append(num)
+        else:
+            continue
+    return result
+
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
 
@@ -208,6 +217,7 @@ print("Reversed string:", reversed_string)
 
 arr = [1, 3, -1, -3, 5, 3, 6, 7]
 k = 3
+nums = [1, 2, 2, 3, 4, 4, 5]
 output = sliding_window_max(arr, k)
 print("Result of Sliding Window Maximum:", output) 
 # Expected output: [3, 3, 5, 5, 6, 7]
@@ -216,3 +226,5 @@ print("Result of isValid method:", isValid(paren_input))
 print("Original words:", words)
 print("Dictionary of words:", frequency_counter(words))
 print("Another Dictionary of words using the get method:", frequency_counter2(words))
+print("Original list of numbers:", nums)
+print("Removed Duplications in numbers list:", remove_duplicates(nums))
