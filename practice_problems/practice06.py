@@ -32,6 +32,20 @@ class Stack:
         temp.next = None
         self.height -= 1
         return temp.value
+    
+class Queue:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.first = new_node
+        self.last = new_node
+        self.length = 1
+    def print_queue(self):
+        temp = self.first
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
+
+    
 
 # my_stack = Stack(4)
 
@@ -42,10 +56,12 @@ class Stack:
 # my_stack.push(1)
 # my_stack.print_stack()
 
-my_stack = Stack(7)
-my_stack.push(23)
-my_stack.push(3)
-my_stack.push(11)
-print(my_stack.pop(), '\n')
-my_stack.print_stack()
+# my_stack = Stack(7)
+# my_stack.push(23)
+# my_stack.push(3)
+# my_stack.push(11)
+# print(my_stack.pop(), '\n')
+# my_stack.print_stack()
 
+my_queue = Queue(4)
+my_queue.print_queue()
