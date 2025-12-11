@@ -67,6 +67,25 @@ class Queue:
             temp.next = None
         self.length -= 1
         return temp.value
+    
+def reverse_string(s):
+    stack = []
+    reversed_string = ""
+    for char in s:
+        stack.append(char)
+    while stack:
+        reversed_string += stack.pop()
+    return reversed_string
+
+my_string = "hello"
+print(reverse_string(my_string))
+
+"""
+    EXPECTED OUTPUT:
+    ----------------
+    olleh
+
+"""
 
 # my_stack = Stack(4)
 
@@ -87,11 +106,11 @@ class Queue:
 # my_queue = Queue(4)
 # my_queue.print_queue()
 
-my_queue = Queue(1)
-my_queue.enqueue(2)
+# my_queue = Queue(1)
+# my_queue.enqueue(2)
 # print 2 node
-print(my_queue.dequeue())
+# print(my_queue.dequeue())
 # print 1 node
-print(my_queue.dequeue())
+# print(my_queue.dequeue())
 # print None
-print(my_queue.dequeue())
+# print(my_queue.dequeue())
