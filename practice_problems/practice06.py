@@ -77,15 +77,86 @@ def reverse_string(s):
         reversed_string += stack.pop()
     return reversed_string
 
-my_string = "hello"
-print(reverse_string(my_string))
+def is_balanced_parentheses(lst):
+    stack = []
+    mapping = {")":"(", "}":"{", "]":"["}
+    for char in lst:
+        if char in mapping.values():
+            stack.append(char)
+        elif char in mapping:
+            if not stack or stack[-1] != mapping[char]:
+                return False
+            stack.pop()
+    return not stack
 
-"""
-    EXPECTED OUTPUT:
-    ----------------
-    olleh
+def test_is_balanced_parentheses():
+    try:
+        assert is_balanced_parentheses('((()))') == True
+        print('Test case 1 passed')
+    except AssertionError:
+        print('Test case 1 failed')
 
-"""
+    try:
+        assert is_balanced_parentheses('()') == True
+        print('Test case 2 passed')
+    except AssertionError:
+        print('Test case 2 failed')
+
+    try:
+        assert is_balanced_parentheses('(()())') == True
+        print('Test case 3 passed')
+    except AssertionError:
+        print('Test case 3 failed')
+
+    try:
+        assert is_balanced_parentheses('(()') == False
+        print('Test case 4 passed')
+    except AssertionError:
+        print('Test case 4 failed')
+
+    try:
+        assert is_balanced_parentheses('())') == False
+        print('Test case 5 passed')
+    except AssertionError:
+        print('Test case 5 failed')
+
+    try:
+        assert is_balanced_parentheses(')(') == False
+        print('Test case 6 passed')
+    except AssertionError:
+        print('Test case 6 failed')
+
+    try:
+        assert is_balanced_parentheses('') == True
+        print('Test case 7 passed')
+    except AssertionError:
+        print('Test case 7 failed')
+
+    try:
+        assert is_balanced_parentheses('()()()()') == True
+        print('Test case 8 passed')
+    except AssertionError:
+        print('Test case 8 failed')
+
+    try:
+        assert is_balanced_parentheses('(())(())') == True
+        print('Test case 9 passed')
+    except AssertionError:
+        print('Test case 9 failed')
+
+    try:
+        assert is_balanced_parentheses('(()()())') == True
+        print('Test case 10 passed')
+    except AssertionError:
+        print('Test case 10 failed')
+
+    try:
+        assert is_balanced_parentheses('((())') == False
+        print('Test case 11 passed')
+    except AssertionError:
+        print('Test case 11 failed')
+
+test_is_balanced_parentheses()
 
 # my_stack = Stack(4)
 
@@ -114,3 +185,13 @@ print(reverse_string(my_string))
 # print(my_queue.dequeue())
 # print None
 # print(my_queue.dequeue())
+
+# my_string = "hello"
+# print(reverse_string(my_string))
+
+"""
+    EXPECTED OUTPUT:
+    ----------------
+    olleh
+
+"""
