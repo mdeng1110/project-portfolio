@@ -75,6 +75,15 @@ class HashTable:
                     all_keys.append(self.data_map[i][j][0])
         return all_keys
 
+def item_in_common(list1, list2):
+    my_dict = {}
+    for i in list1:
+        my_dict[i] = True
+    for j in list2:
+        if j in my_dict:
+            return True
+    return False
+
 # my_tree = BinarySearchTree()
 # my_tree.insert(2)
 # my_tree.insert(1)
@@ -103,10 +112,15 @@ class HashTable:
 # print(my_hash_table.get_item('washers'))
 # print(my_hash_table.get_item('lumber'))
 
-my_hash_table = HashTable()
+# my_hash_table = HashTable()
 
-my_hash_table.set_item('bolts', 1400)
-my_hash_table.set_item('washer', 50)
-my_hash_table.set_item('lumber', 70)
+# my_hash_table.set_item('bolts', 1400)
+# my_hash_table.set_item('washer', 50)
+# my_hash_table.set_item('lumber', 70)
 
-print(my_hash_table.keys())
+# print(my_hash_table.keys())
+
+list1 = [1,3,5]
+list2 = [2,4,5]
+
+print(item_in_common(list1, list2))
