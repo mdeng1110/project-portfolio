@@ -24,7 +24,20 @@ def twoSum(nums, target):
     #         if nums[i] + nums[j] == target:
     #             return [i, j]
     # return []
+
+def isAnagram(s, t):
+    s = list(s)
+    s = sorted(s)
+    t = list(t)
+    t = sorted(t)
+    if s == t:
+        return True
+    return False
     
-nums = [2,7,11,15]
-target = 9
-print(twoSum(nums, target))
+# nums = [2,7,11,15]
+# target = 9
+# print(twoSum(nums, target))
+
+s = "anagram"
+t = "nagaram"
+print(isAnagram(s, t))
