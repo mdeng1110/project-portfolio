@@ -1,3 +1,4 @@
+from collections import Counter
 # car = {
 #   "brand": "Ford",
 #   "model": "Mustang",
@@ -34,10 +35,18 @@ def isAnagram(s, t):
         return True
     return False
     
+def isAnagram2(s, t):
+    if len(s) != len(t):
+        return False
+    s_dict = Counter(s)
+    t_dict = Counter(t)
+    return s_dict == t_dict
+
 # nums = [2,7,11,15]
 # target = 9
 # print(twoSum(nums, target))
 
 s = "anagram"
 t = "nagaram"
-print(isAnagram(s, t))
+print("Result of isAnagram: ", isAnagram(s, t))
+print("Result of isAnagram2: ", isAnagram2(s, t))
