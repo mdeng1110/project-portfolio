@@ -42,11 +42,23 @@ def isAnagram2(s, t):
     t_dict = Counter(t)
     return s_dict == t_dict
 
+def removeDuplicates(nums):
+        n = len(nums)
+        j = 1
+        for i in range(1, n):
+            if nums[i] != nums[i-1]:
+                nums[j] = nums[i]
+                j += 1
+        return j
+
 # nums = [2,7,11,15]
 # target = 9
 # print(twoSum(nums, target))
 
-s = "anagram"
-t = "nagaram"
-print("Result of isAnagram: ", isAnagram(s, t))
-print("Result of isAnagram2: ", isAnagram2(s, t))
+# s = "anagram"
+# t = "nagaram"
+# print("Result of isAnagram: ", isAnagram(s, t))
+# print("Result of isAnagram2: ", isAnagram2(s, t))
+
+nums = [0,0,1,1,1,2,2,3,3,4]
+print(removeDuplicates(nums))
