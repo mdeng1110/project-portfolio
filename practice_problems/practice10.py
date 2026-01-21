@@ -60,5 +60,10 @@ def removeDuplicates(nums):
 # print("Result of isAnagram: ", isAnagram(s, t))
 # print("Result of isAnagram2: ", isAnagram2(s, t))
 
-nums = [0,0,1,1,1,2,2,3,3,4]
-print(removeDuplicates(nums))
+# nums = [0,0,1,1,1,2,2,3,3,4]
+# print(removeDuplicates(nums))
+
+item = 'alice'
+my_list = ['alice', 'bob', 'carl']
+print(my_list)
+print(item in my_list)
