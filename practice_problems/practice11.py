@@ -8,6 +8,16 @@ def isValid(s):
             return False
     return len(stack) == 0
 
+def reverseString(s):
+    n = len(s)
+    l = 0
+    r = n - 1
+    while l < r:
+        s[l], s[r] = s[r], s[l]
+        l += 1
+        r -= 1
+    return s
+
 # from collections import Counter
 
 # def firstUniqChar(s):
@@ -20,5 +30,8 @@ def isValid(s):
 # s = "leetcode"
 # print(firstUniqChar(s))
 
-s = '()[]{}'
-print(isValid(s))
+# s = '()[]{}'
+# print(isValid(s))
+
+s = ["h","e","l","l","o"]
+print(reverseString(s))
