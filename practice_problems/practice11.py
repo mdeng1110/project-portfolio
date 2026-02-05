@@ -30,6 +30,16 @@ def isPalindrome(s):
         r -= 1
     return True
 
+
+def moveZeroes(nums):
+    l = 0
+    for r in range(len(nums)):
+        if nums[r]:
+            nums[l], nums[r] = nums[r], nums[l] #swap
+            l += 1 #move pointer
+    return nums
+
+
 # from collections import Counter
 
 # def firstUniqChar(s):
@@ -48,5 +58,8 @@ def isPalindrome(s):
 # s = ["h","e","l","l","o"]
 # print(reverseString(s))
 
-s = "A man, a plan, a canal: Panama"
-print(isPalindrome(s))
+# s = "A man, a plan, a canal: Panama"
+# print(isPalindrome(s))
+
+nums = [0,1,0,3,12]
+print(moveZeroes(nums))
