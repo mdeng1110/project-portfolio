@@ -18,6 +18,18 @@ def reverseString(s):
         r -= 1
     return s
 
+def isPalindrome(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
+    n = len(s)
+    l = 0
+    r = n - 1
+    while l < r:
+        if s[l] != s[r]:
+            return False
+        l += 1
+        r -= 1
+    return True
+
 # from collections import Counter
 
 # def firstUniqChar(s):
@@ -33,5 +45,8 @@ def reverseString(s):
 # s = '()[]{}'
 # print(isValid(s))
 
-s = ["h","e","l","l","o"]
-print(reverseString(s))
+# s = ["h","e","l","l","o"]
+# print(reverseString(s))
+
+s = "A man, a plan, a canal: Panama"
+print(isPalindrome(s))
