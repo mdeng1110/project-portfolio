@@ -1,16 +1,16 @@
 class Book:
-    def __init__(self, title, author, ISBN):
+    def __init__(self, title, author, isbn):
         """
         Initialize a Book object.
         
-        :param self: self
+        :param self: Book object
         :param title: Title of the book
         :param author: Author of the book
-        :param ISBN: International Standard Book Number
+        :param isbn: International Standard Book Number
         """
         self.title = title
         self.author = author
-        self.isbn = ibsn
+        self.isbn = isbn
 
     def __str__(self):
         """
