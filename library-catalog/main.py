@@ -7,7 +7,7 @@ from library import Library
 
 from models import Book
       
-def find_by_title(title_query):
+def find_by_title(isbn_index, title_query):
     """
     Find books whose title contains the query string(case-sensitive)
     """
@@ -37,7 +37,7 @@ def measure_search_time(csv_path, search_term, step=500):
             test_library.add_book(book)
 
         start = time.perf_counter()
-        find_by_title(search_term)
+        find_by_title(test_library.isbn_index, search_term)
         end = time.perf_counter()
 
         timings.append({

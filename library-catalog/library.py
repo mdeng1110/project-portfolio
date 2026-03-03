@@ -2,6 +2,12 @@ from models import Book
 import csv
 import os
 
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.books = []
+        self.is_end = False
+
 class Library:
     def __init__(self):
         """
@@ -10,20 +16,36 @@ class Library:
         self.isbn_index = {}
 
     def add_book(self, book):
-        """
-        Add a book to the Library.
-        Check for duplicate ISBN before adding.
-        
-        :param self: Library object
-        :return bool: True if added successful, False if duplicate
-        """
         if book.isbn in self.isbn_index:
-            print(f"Book with ISBN {book.isbn} already exists.")
             return False
-        
+
+        # ISBN index
         self.isbn_index[book.isbn] = book
-        print(f"Book '{book.title}' added successfully.")
+
+        # Author index
+        if book.author not in self.author_index:
+            self.author_index[book.author] = []
+        self.author_index[book.author].append(book)
+
+        # Title Trie
+        self._insert_title(book.title, book)
+
         return True
+    
+    def _insert_title(self, title, book):
+        """
+        Insert a book title into the trie.
+        """
+        node = self.title_trie
+        title = title.lower()
+
+        for char in title:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+
+        node.is_end = True
+        node.books.append(book)
     
     def update_book(self, isbn, title=None, author=None):
         """
@@ -91,5 +113,3 @@ class Library:
                     print(f"Skipping row due to missing/malformed field: {e}")
 
         return added_count
-
-
