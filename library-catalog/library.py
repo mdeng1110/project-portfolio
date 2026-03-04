@@ -34,14 +34,18 @@ class Library:
     
     def _insert_title(self, title, book):
         """
-        Insert a book title into the trie.
+        Insert a title into the Trie, handling spaces and special characters.
         """
         node = self.title_trie
-        title = title.lower()
 
-        for char in title:
+        # Normalize for consistent searching
+        normalized_title = title.lower()
+
+        for char in normalized_title:
+            # char may be a letter, space, number, or punctuation
             if char not in node.children:
                 node.children[char] = TrieNode()
+
             node = node.children[char]
 
         node.is_end = True
