@@ -18,9 +18,16 @@ def maxProduct(nums1):
         ans = max(ans, cur_max)
     return ans
 
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+
 nums = [2,7,11,15]
 target = 9
 # print(twoSum(nums, target))
 
 nums1 = [2,3,-2,4]
-print(maxProduct(nums1))
+# print(maxProduct(nums1))
+
+print(factorial(4))
