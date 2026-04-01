@@ -1,5 +1,5 @@
 import turtle as t
-import random
+import secrets
 
 tim = t.Turtle()
 
@@ -7,6 +7,6 @@ colors = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue","LightSeaGr
 directions = [0, 90, 180, 270]
 
 for _ in range(200):
-    tim.color(random.choice(colors))
+    tim.color(secrets.SystemRandom().choice(colors))
     tim.forward(30)
-    tim.setheading(random.choice(directions))
+    tim.setheading(secrets.SystemRandom().choice(directions))
