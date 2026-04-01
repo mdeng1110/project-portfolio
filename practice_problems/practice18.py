@@ -23,11 +23,43 @@ def factorial(n):
         return 1
     return n * factorial(n - 1)
 
-nums = [2,7,11,15]
-target = 9
+
+def threeSum(nums):
+    nums.sort()
+    n = len(nums)
+    answer = []
+
+    for i in range(n):
+        if nums[i] > 0:
+            break
+        elif i > 0 and nums[i] == nums[i-1]:
+            continue
+
+        lo, hi = i+1, n-1
+        while lo < hi:
+            summ= nums[i] + nums[lo] + nums[hi]
+            if summ == 0:
+                answer.append([nums[i], nums[lo], nums[hi]])
+                lo, hi = lo+1, hi-1
+                while lo < hi and nums[lo] == nums[lo-1]:
+                    lo += 1
+                while lo < hi and nums[hi] == nums[hi+1]:
+                    hi -= 1
+            elif summ < 0:
+                lo += 1
+            else:
+                hi -= 1
+    return answer 
+
+
+# nums = [2,7,11,15]
+# target = 9
 # print(twoSum(nums, target))
 
-nums1 = [2,3,-2,4]
+# nums1 = [2,3,-2,4]
 # print(maxProduct(nums1))
 
-print(factorial(4))
+# print(factorial(4))
+
+nums = [-1,0,1,2,-1,-4]
+print(threeSum(nums))
