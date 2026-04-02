@@ -51,6 +51,19 @@ def threeSum(nums):
                 hi -= 1
     return answer 
 
+def maxArea(height):
+    max_area = 0
+    l = 0
+    r = len(height) - 1
+    while l < r:
+        area = (r- l) * min(height[r], height[l])
+        max_area = max(max_area, area)
+        if height[l] < height[r]:
+            l += 1
+        else:
+            r -= 1
+    return max_area
+
 
 # nums = [2,7,11,15]
 # target = 9
@@ -61,5 +74,8 @@ def threeSum(nums):
 
 # print(factorial(4))
 
-nums = [-1,0,1,2,-1,-4]
-print(threeSum(nums))
+# nums = [-1,0,1,2,-1,-4]
+# print(threeSum(nums))
+
+height = [1,8,6,2,5,4,8,3,7]
+print(maxArea(height))
