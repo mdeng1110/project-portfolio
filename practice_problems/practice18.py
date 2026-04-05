@@ -64,7 +64,6 @@ def maxArea(height):
             r -= 1
     return max_area
 
-
 # nums = [2,7,11,15]
 # target = 9
 # print(twoSum(nums, target))
@@ -77,5 +76,6 @@ def maxArea(height):
 # nums = [-1,0,1,2,-1,-4]
 # print(threeSum(nums))
 
-height = [1,8,6,2,5,4,8,3,7]
-print(maxArea(height))
+# height = [1,8,6,2,5,4,8,3,7]
+# print(maxArea(height))
+
