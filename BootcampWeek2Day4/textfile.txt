@@ -1,0 +1,5 @@
+Hi.  This is May's textfile.
+I am currently learning more Python Programming.
+I am also learning about how to open, close, read, and write files.
+In addition, this is all part of a bootcamp.
+I enjoy learning about Python Programming.  
