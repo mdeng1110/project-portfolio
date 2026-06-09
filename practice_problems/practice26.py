@@ -78,3 +78,13 @@ def nonrepeating(word):
             return k
 word = "swiss"
 print(nonrepeating(word))
+
+# Python 3: Find the Largest Number
+def largest_num(nums1):
+    max_num = nums1[0]
+    for num in nums1:
+        if num > max_num:
+            max_num = num
+    return max_num
+nums1 = [12, 5, 27, 3, 18]
+print(largest_num(nums1))
