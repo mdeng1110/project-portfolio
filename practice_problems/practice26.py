@@ -32,3 +32,11 @@ def reverse_string(text):
 
 text="hello"
 print(reverse_string(text))
+
+# Practice Question 4: Palindrome
+def is_palindrome(text1):
+    text1 = text1.lower()
+    return text1 == text1[::-1]
+
+text1 = "tacocat"
+print(is_palindrome(text1))
