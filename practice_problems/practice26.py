@@ -51,3 +51,16 @@ for i in range(1, 50):
         print("Buzz")
     else:
         print(i)
+
+# Python #1
+def frequency(text_list):
+    word_counts = {}
+    word_list = text_list.split()
+    for text in word_list:
+        if text not in word_counts:
+            word_counts[text] = 1
+        else:
+            word_counts[text] += 1
+    return word_counts
+text_list = "apple banana apple orange banana apple"
+print(frequency(text_list))
