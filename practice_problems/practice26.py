@@ -1,4 +1,5 @@
-def count_occurences(nums):
+# Practice Problem #1: Count Occurences
+def count_occurrences(nums):
     result = {}
     for num in nums:
         if num not in result:
@@ -8,4 +9,6 @@ def count_occurences(nums):
     return result
 
 nums = [1,1,2,3,3,3]
-print(count_occurences(nums))
+print(count_occurrences(nums))
+
+# Practice Problem #2: Find Duplicates
