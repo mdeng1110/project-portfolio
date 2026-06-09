@@ -25,3 +25,10 @@ def find_duplicates(nums):
 
 # Print Find Duplicates
 print(find_duplicates(nums))
+
+# Practice Question #3
+def reverse_string(text):
+    return text[::-1]
+
+text="hello"
+print(reverse_string(text))
