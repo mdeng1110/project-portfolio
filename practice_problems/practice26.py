@@ -40,3 +40,14 @@ def is_palindrome(text1):
 
 text1 = "tacocat"
 print(is_palindrome(text1))
+
+# Practice Question #5: FizzBuzz
+for i in range(1, 50):
+    if i % 15 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
