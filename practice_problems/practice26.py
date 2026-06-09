@@ -88,3 +88,15 @@ def largest_num(nums1):
     return max_num
 nums1 = [12, 5, 27, 3, 18]
 print(largest_num(nums1))
+
+# Python 4: Find the Smallest Number
+def smallest_num(nums2):
+    min_num = nums2[0]
+    for num in nums2:
+        if num < min_num:
+            min_num = num
+    return min_num
+nums2 = [12, 5, 27, 3, 18]
+print(smallest_num(nums2))
+
+print(largest_num(nums1), smallest_num(nums1))
