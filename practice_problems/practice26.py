@@ -64,3 +64,17 @@ def frequency(text_list):
     return word_counts
 text_list = "apple banana apple orange banana apple"
 print(frequency(text_list))
+
+# Python #2
+def nonrepeating(word):
+    char_dict = {}
+    for char in word:
+        if char not in char_dict:
+            char_dict[char] = 1
+        else:
+            char_dict[char] += 1
+    for k, v in char_dict.items():
+        if v == 1:
+            return k
+word = "swiss"
+print(nonrepeating(word))
