@@ -144,3 +144,16 @@ def palindrome(text5):
     return False
 text5 = "racecar"
 print(palindrome(text5))
+
+# Python Practice: Prime Numbers
+def prime_number(num):
+    if num <= 1:
+        return False
+
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+
+    return True
+num = 7
+print(prime_number(num))
