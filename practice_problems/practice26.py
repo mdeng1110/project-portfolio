@@ -129,3 +129,10 @@ def duplicates_nums(nums3):
     return result
 nums3 = [1, 2, 2, 3, 4, 4, 5]
 print(duplicates_nums(nums3))
+
+# List Comprehension Practice
+nums4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+result = [i for i in nums4 if i % 2 == 0]
+
+print(result)
