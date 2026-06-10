@@ -100,3 +100,32 @@ nums2 = [12, 5, 27, 3, 18]
 print(smallest_num(nums2))
 
 print(largest_num(nums1), smallest_num(nums1))
+
+# Reverse a string
+def reverse(text2):
+    return text2[::-1]
+def reverse2(text2):
+    reversed_text = ""
+
+    for char in text:
+        reversed_text = char + reversed_text
+
+    return reversed_text
+text2 = "python"
+print(reverse(text2))
+
+# Python Problem: Find Duplicates in a List
+def duplicates_nums(nums3):
+    nums_dict = {}
+    result = []
+    for num in nums3:
+        if num not in nums_dict:
+            nums_dict[num] = 1
+        else:
+            nums_dict[num] += 1
+    for k, v in nums_dict.items():
+        if v > 1:
+            result.append(k)
+    return result
+nums3 = [1, 2, 2, 3, 4, 4, 5]
+print(duplicates_nums(nums3))
