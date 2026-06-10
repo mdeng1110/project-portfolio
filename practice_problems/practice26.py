@@ -136,3 +136,11 @@ nums4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 result = [i for i in nums4 if i % 2 == 0]
 
 print(result)
+
+# Python Problem: Palindrome
+def palindrome(text5):
+    if text5 == text5[::-1]:
+        return True
+    return False
+text5 = "racecar"
+print(palindrome(text5))
