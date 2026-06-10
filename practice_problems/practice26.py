@@ -172,3 +172,10 @@ print(prime_to_n(20))
 nums6 = [1,2,3,4,5]
 lambda_fxn = list(map(lambda x: x*x, nums6))
 print(lambda_fxn)
+
+# Python Problem: Lambda Function with Even Numbers
+nums7 = [1, 2, 3, 4, 5, 6]
+
+result1 = list(filter(lambda x: x % 2 == 0, nums7))
+
+print(result1)
