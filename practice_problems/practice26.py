@@ -146,7 +146,7 @@ text5 = "racecar"
 print(palindrome(text5))
 
 # Python Practice: Prime Numbers
-def prime_number(num):
+def is_prime(num):
     if num <= 1:
         return False
 
@@ -155,5 +155,20 @@ def prime_number(num):
             return False
 
     return True
+
+def prime_to_n(n):
+    result = []
+
+    for i in range(1, n + 1):
+        if is_prime(i):
+            result.append(i)
+    return result
+
 num = 7
-print(prime_number(num))
+print(is_prime(num))
+print(prime_to_n(20))
+
+# Python Problem: Lambda Function
+nums6 = [1,2,3,4,5]
+lambda_fxn = list(map(lambda x: x*x, nums6))
+print(lambda_fxn)
