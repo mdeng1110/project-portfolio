@@ -8,5 +8,6 @@ driver.get("https://www.amazon.com/Instant-Pot-Plus-60-Programmable/dp/B01NBKTPT
 
 price_dollar = driver.find_element(By.CLASS_NAME, value="a-price-whole")
 price_cents = driver.find_element(By.CLASS_NAME, value="a-price-fraction")
+print(f"The price is {price_dollar.text}.{price_cents.text}")
 #driver.close()
-#driver.quit()
+driver.quit()
